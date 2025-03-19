@@ -2,8 +2,10 @@ namespace ContainersApp.models;
 
 public class GasContainer : Container, IHazardNotifier
 {
-    public GasContainer(double height, double weight, double deepness, double capacity) : base(ContainerType.GAS, height, weight, deepness, capacity)
+    private double pressure;
+    public GasContainer(double height, double weight, double deepness, double capacity, double pressure) : base(ContainerType.GAS, height, weight, deepness, capacity)
     {
+        this.pressure = pressure;
     }
     
     public override void EmptyCargo()
