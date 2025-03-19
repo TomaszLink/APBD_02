@@ -14,7 +14,7 @@ public abstract class Container
     private static int last_serial_number = 0;
     private static string serial_number_prefix = "KON";
 
-    public Container(ContainerType type, double height, double weight, double deepness, double capacity)
+    protected Container(ContainerType type, double height, double weight, double deepness, double capacity)
     {
         this.serialNumber = GenerateNewSerialNumber(type);
         this.height = height;
