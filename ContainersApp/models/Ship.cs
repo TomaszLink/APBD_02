@@ -14,25 +14,21 @@ public class Ship
         this.maxContainersCount = maxContainersCount;
         this.maxContainersWeight = maxContainersWeight;
     }
-
-
+    
     public void AddContainer(Container container)
     {
         this.containers.Add(container);
     }
-    
 
     public void AddContainers(List<Container> containers)
     {
         this.containers.AddRange(containers);
     }
     
-
     public void RemoveContainer(Container container)
     {
         this.containers.Remove(container);
     }
-    
     
     public void RemoveContainer(String serialNumber)
     {
@@ -47,15 +43,12 @@ public class Ship
         }
     }
     
-
-
     public void Replace(string serialNumber, Container container)
     {
         this.RemoveContainer(serialNumber);
         this.AddContainer(container);
     }
-
-
+    
     public static void Transfer(string serialNumber, Ship shipFrom, Ship shipTo)
     {
         Container container = shipFrom.RemoveAndGetContainer(serialNumber);
@@ -68,8 +61,7 @@ public class Ship
             Console.WriteLine("Container " + serialNumber + " not found");
         }
     }
-
-
+    
     public void ShowInfo()
     {
         Console.WriteLine("Ship Info: max speed: " + this.maxSpeed + ", max container count: " + this.maxContainersCount +  ", max container weight: " + this.maxContainersWeight);
@@ -78,7 +70,6 @@ public class Ship
             Console.WriteLine("Ship Info: Load: " + container.SerialNumber);
         }
     }
-    
 
     private Container RemoveAndGetContainer(String serialNumber)
     {
@@ -89,12 +80,4 @@ public class Ship
         }
         return found;
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

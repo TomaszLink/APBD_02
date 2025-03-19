@@ -18,7 +18,6 @@ public class LiquidContainer : Container, IHazardNotifier
         }
         base.LoadCargo(cargo);
     }
-
     
     public void sendNotification()
     {

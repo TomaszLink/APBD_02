@@ -46,14 +46,12 @@ public abstract class Container
     {
         this.cargoWeight = 0;
     }
-
-
+    
     public void ShowInfo()
     {
         Console.WriteLine(this.serialNumber);
     }
     
-
     private string GenerateNewSerialNumber(ContainerType containerType)
     {
         string typeSymbol = containerType.GetSymbolOfContainerType();
