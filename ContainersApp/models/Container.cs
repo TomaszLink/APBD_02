@@ -48,6 +48,12 @@ public abstract class Container
     }
 
 
+    public void ShowInfo()
+    {
+        Console.WriteLine(this.serialNumber);
+    }
+    
+
     private string GenerateNewSerialNumber(ContainerType containerType)
     {
         string typeSymbol = containerType.GetSymbolOfContainerType();

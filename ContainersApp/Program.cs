@@ -86,3 +86,37 @@ gasContainer.LoadCargo(gasCargo2);
 Console.WriteLine(gasContainer.CargoWeight == 100);
 gasContainer.EmptyCargo();
 Console.WriteLine(gasContainer.CargoWeight == 5);
+
+
+Ship ship = new Ship(50 ,50 ,50);
+ship.AddContainer(collingContainer);
+ship.AddContainer(liquidContainer);
+ship.AddContainer(gasContainer);
+ship.ShowInfo();
+
+Ship ship2 = new Ship(20 ,50 ,50);
+Ship.Transfer("KON-C-23", ship, ship2);
+
+ship.ShowInfo();
+
+Ship.Transfer(collingContainer.SerialNumber, ship, ship2);
+
+ship.ShowInfo();
+ship2.ShowInfo();
+
+ship.RemoveContainer(liquidContainer);
+
+ship2.Replace(collingContainer.SerialNumber, liquidContainer);
+
+ship.ShowInfo();
+ship2.ShowInfo();
+
+ship2.RemoveContainer(liquidContainer);
+
+List<Container> containers = new List<Container>();
+containers.Add(collingContainer);
+containers.Add(liquidContainer);
+containers.Add(gasContainer);
+ship2.AddContainers(containers);
+ship2.ShowInfo();
+
